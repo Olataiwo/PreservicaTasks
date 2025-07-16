@@ -4,6 +4,7 @@ obj/
 
 ## Ignore VS Code or Visual Studio user files
 .vscode/
+.vs/
 *.user
 *.suo
 
