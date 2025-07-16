@@ -1,0 +1,25 @@
+## Ignore build output
+bin/
+obj/
+
+## Ignore VS Code or Visual Studio user files
+.vscode/
+*.user
+*.suo
+
+## Ignore test results
+TestResults/
+*.trx
+
+## Ignore Playwright browser cache
+.playwright/
+
+## Ignore system files
+.DS_Store
+Thumbs.db
+
+## Ignore NuGet packages if not checked in
+*.nupkg
+*.snupkg
+
+
