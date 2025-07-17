@@ -39,20 +39,7 @@ public class ApiService
         return content.Count > 0;
     }
 
-    public bool ErrorMessageContains(string expectedMessage)
-    {
-        try
-        {
-            var errorObj = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(_response.Content);
-            if (errorObj != null && errorObj.TryGetValue("error", out var error))
-            {
-                return error.message.ToString().Contains(expectedMessage, StringComparison.OrdinalIgnoreCase);
-            }
-        }
-        catch { }
 
-        return false;
-    }
 
 
     public void Dispose()
