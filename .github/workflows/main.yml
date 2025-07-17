@@ -28,14 +28,15 @@ jobs:
     - name: Install ReportGenerator
       run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
-    - name: Restore dependencies
-      run: dotnet restore
-
-    - name: Build solution
-      run: dotnet build --configuration Release
-
-    - name: Run tests and output .trx result
-      run: dotnet test --configuration Release --logger "trx;LogFileName=TestResults/test-results.trx"
+     
+    - name: Restore dependencies for RestAPi Project
+      run: dotnet restore RestApiProject.csproj
+    - name:  Build RestAPi Project
+      run: dotnet build RestApiProject.csproj --configuration Release
+    - name: Run api tests and output .trx result
+      run: dotnet test RestApiProject/RestApiProject.csproj --configuration Release --logger "trx;LogFileName=TestResults/api-results.trx"
+    - name: Run UI tests
+      run: dotnet test UiSignUpTest/UiSignUpTest.csproj --configuration Release --logger "trx;LogFileName=TestResults/ui-results.trx"
 
     - name: Generate HTML test report
       run: |
