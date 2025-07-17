@@ -23,7 +23,7 @@ jobs:
     - name: Build playwright driver
       run: dotnet build UiSignUpTest/UiSignUpTest.csproj --configuration Release
     - name: Install Playwright
-      run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
+      run: dotnet test UiSignUpTest/UiSignUpTest.csproj --list-tests > /dev/null
 
     - name: Install ReportGenerator
       run: dotnet tool install --global dotnet-reportgenerator-globaltool
