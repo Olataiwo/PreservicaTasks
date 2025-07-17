@@ -21,7 +21,7 @@ jobs:
     - name: Install Playwright CLI
       run: dotnet tool install --global Microsoft.Playwright.CLI
     - name: Build playwright driver
-      run: dotnet build
+      run: dotnet build PreservicaExercise.sln --configuration Release
     - name: Install Playwright
       run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
 
