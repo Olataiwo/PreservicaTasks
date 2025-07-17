@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace RestApiProject.StepDefinitions
 {
     [Binding]
-    internal class FlrSuccess
+    public class FlrSuccess
     {
        
         private readonly ApiService _apiService;
