@@ -20,9 +20,10 @@ jobs:
 
     - name: Install Playwright CLI
       run: dotnet tool install --global Microsoft.Playwright.CLI
-
-    - name: Install Chromium only
-      run: playwright install chromium
+    - name: Build playwright driver
+      run: dotnet build
+    - name: Install Playwright
+      run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
 
     - name: Install ReportGenerator
       run: dotnet tool install --global dotnet-reportgenerator-globaltool
